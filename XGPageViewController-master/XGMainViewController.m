@@ -92,7 +92,7 @@
     }
     vc.view.backgroundColor = self.colorArray[index%3];
     vc.index = index;
-//    NSLog(@"%@",[NSString stringWithFormat:@"刷新了第%ld页",(long)index]);
+    NSLog(@"%@",[NSString stringWithFormat:@"刷新了第%ld页",(long)index]);
     return vc;
 }
 

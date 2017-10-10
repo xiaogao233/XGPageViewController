@@ -51,6 +51,8 @@ static CGFloat const kAnimationTime = 0.25;
 @property(nonatomic, assign)NSInteger differIndex;
 /* 滑动手势 */
 @property(nonatomic, strong)UIPanGestureRecognizer *panGesture;
+/* 是否初次加载 */
+@property(nonatomic, assign)BOOL isFirstLoad;
 
 @end
 
@@ -60,6 +62,7 @@ static CGFloat const kAnimationTime = 0.25;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.isFirstLoad = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -75,6 +78,20 @@ static CGFloat const kAnimationTime = 0.25;
     [super viewDidAppear:animated];
     for (UIViewController *vc in self.childViewControllers) {
         [vc endAppearanceTransition];
+    }
+    if (self.isFirstLoad)
+    {
+        [self childViewControllerForIndex:self.curPage+1 isLastPage:NO];
+        if (self.curPage>0)
+        {
+            [self childViewControllerForIndex:self.curPage-1 isLastPage:YES];
+        }
+        else
+        {
+            [self childViewControllerForIndex:self.curPage+2 isLastPage:NO];
+        }
+        [self handlerSubviewsLayout:NO];
+        self.isFirstLoad = NO;
     }
 }
 

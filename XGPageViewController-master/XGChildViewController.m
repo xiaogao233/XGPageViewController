@@ -21,29 +21,29 @@
     [self initLayout];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页将要出现",(long)_index]);
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页已经出现",(long)_index]);
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页将要消失",(long)_index]);
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页已经消失",(long)_index]);
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页将要出现",(long)_index]);
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页已经出现",(long)_index]);
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页将要消失",(long)_index]);
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated
+//{
+//    [super viewDidDisappear:animated];
+//    NSLog(@"%@", [NSString stringWithFormat:@"第%ld页已经消失",(long)_index]);
+//}
 
 - (void)initLayout
 {
